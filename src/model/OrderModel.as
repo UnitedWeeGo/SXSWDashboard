@@ -15,6 +15,7 @@ package model
 		private var _instanceId:String;
 		private var _endpoint:String;
 		private var _lastOrderId:String = '0';
+		private var _refreshRateInSeconds:int;
 		
 		public function OrderModel( pvt:SingletonEnforcer )
 		{
@@ -39,6 +40,7 @@ package model
 			
 			_instanceId = cXML.@instanceId;
 			_endpoint = cXML.@endpoint;
+			_refreshRateInSeconds = cXML.@refreshRateInSeconds;
 		}
 		
 		public function processNewOrders(xml:XML):void
@@ -94,6 +96,11 @@ package model
 		public function set lastOrderId(value:String):void
 		{
 			_lastOrderId = value;
+		}
+
+		public function get refreshRateInSeconds():int
+		{
+			return _refreshRateInSeconds;
 		}
 
 

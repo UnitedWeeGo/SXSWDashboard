@@ -14,6 +14,7 @@
 			
 			import service.OrderService;
 			
+			import view.modals.FailModal;
 			import view.modals.SuccessModal;
 			
 			protected function application1_preinitializeHandler(event:FlexEvent):void
@@ -26,6 +27,7 @@
 				OrderService.getInstance().getOrders();
 				OrderModel.getInstance().orders.addEventListener(CollectionEvent.COLLECTION_CHANGE, handleOrderNumberChange);
 				OrderService.getInstance().addEventListener(ServiceEvent.CALL_SUCCESS, handleCallSuccess);
+				OrderService.getInstance().addEventListener(ServiceEvent.CALL_FAIL, handleCallFail);
 			}
 			private function handleOrderNumberChange(event:CollectionEvent):void
 			{
@@ -35,6 +37,15 @@
 			private function handleCallSuccess(event:ServiceEvent):void
 			{
 				var alertWindow:SuccessModal = new SuccessModal();
+				alertWindow.width = stage.width;
+				alertWindow.height = stage.height;
+				alertWindow.x = 0;
+				alertWindow.y = 0;
+				alertWindow.open(this, true);
+			}
+			private function handleCallFail(event:ServiceEvent):void
+			{
+				var alertWindow:FailModal = new FailModal();
 				alertWindow.width = stage.width;
 				alertWindow.height = stage.height;
 				alertWindow.x = 0;

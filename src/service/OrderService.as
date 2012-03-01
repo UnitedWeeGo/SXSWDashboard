@@ -7,6 +7,7 @@ package service
 	import flash.events.IOErrorEvent;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
+	import flash.utils.setInterval;
 	
 	import model.OrderModel;
 
@@ -22,13 +23,14 @@ package service
 		
 		public function OrderService(e:SingletonEnforcer)
 		{
+			setInterval(getOrders, OrderModel.getInstance().refreshRateInSeconds * 1000);
 		}
 		
 		public function getOrders():void
 		{
 			var xmlLoader:URLLoader = new URLLoader();
 			xmlLoader.addEventListener(Event.COMPLETE, handleCallSuccess);
-			xmlLoader.addEventListener(IOErrorEvent.IO_ERROR, dispatchCallFail);
+			xmlLoader.addEventListener(IOErrorEvent.IO_ERROR, orderCallFail);
 			xmlLoader.load( new URLRequest(OrderModel.getInstance().endpoint + '/orders.php?orderId=' + OrderModel.getInstance().lastOrderId + '&instanceId=' + OrderModel.getInstance().instanceId) );
 		}
 		public function orderComplete(orderId:String):void
@@ -66,6 +68,10 @@ package service
 		{
 			var ev:ServiceEvent = new ServiceEvent(ServiceEvent.CALL_FAIL);
 			dispatchEvent(ev);
+		}
+		private function orderCallFail(event:IOErrorEvent):void
+		{
+			trace('orderCallFail, do nothing it\'ll try again');
 		}
 	}
 }

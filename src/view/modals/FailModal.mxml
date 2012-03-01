@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnablePopUpContainer xmlns:fx="http://ns.adobe.com/mxml/2009" styleName="optionsModalContainer"
+						   xmlns:s="library://ns.adobe.com/flex/spark" width="768" height="1024">
+	
+	<fx:Script>
+		<![CDATA[
+			protected function closeButton_clickHandler(event:MouseEvent):void
+			{
+				super.close(false);
+			}
+		]]>
+	</fx:Script>
+	
+	
+	<s:BorderContainer verticalCenter="0" horizontalCenter="0" width="550" height="190" styleName="itemAddedModal">
+		<s:Label styleName="modalMessage" x="103" y="61" text="ERROR, TRY AGAIN." />
+		<s:Image source="assets/closeButton.png" x="508" y="-41" click="closeButton_clickHandler(event)" />
+	</s:BorderContainer>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+</s:SkinnablePopUpContainer>
+
+
