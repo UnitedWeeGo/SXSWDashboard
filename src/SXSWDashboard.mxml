@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" applicationDPI="160" preinitialize="application1_preinitializeHandler(event)" creationComplete="application1_creationCompleteHandler(event)" xmlns:orderList="view.orderList.*">
+	
+	<fx:Style source="ClientStyle.css" />
+	<fx:Script>
+		<![CDATA[
+			import events.ServiceEvent;
+			
+			import model.OrderModel;
+			
+			import mx.events.CollectionEvent;
+			import mx.events.FlexEvent;
+			
+			import service.OrderService;
+			
+			import view.modals.SuccessModal;
+			
+			protected function application1_preinitializeHandler(event:FlexEvent):void
+			{
+				OrderModel.getInstance();
+			}
+			
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				OrderService.getInstance().getOrders();
+				OrderModel.getInstance().orders.addEventListener(CollectionEvent.COLLECTION_CHANGE, handleOrderNumberChange);
+				OrderService.getInstance().addEventListener(ServiceEvent.CALL_SUCCESS, handleCallSuccess);
+			}
+			private function handleOrderNumberChange(event:CollectionEvent):void
+			{
+				var len:int = OrderModel.getInstance().orders.length;
+				orderCount.text = len + ' OPEN ORDER' + (len != 1 ? 'S' : '');
+			}
+			private function handleCallSuccess(event:ServiceEvent):void
+			{
+				var alertWindow:SuccessModal = new SuccessModal();
+				alertWindow.width = stage.width;
+				alertWindow.height = stage.height;
+				alertWindow.x = 0;
+				alertWindow.y = 0;
+				alertWindow.open(this, true);
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<s:Label styleName="orderBoard" x="20" y="41" text="ORDER BOARD" />
+	<s:Label styleName="orderCount" x="20" y="107" id="orderCount" />
+	<orderList:OrderList x="20" y="143" width="984" height="605"/>
+	
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+</s:Application>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:List xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		styleName="vOrderListStyle"
+		itemRenderer="view.orderList.OrderListItemRenderer"
+		dataProvider="{OrderModel.getInstance().orders}" 
+		creationComplete="list1_creationCompleteHandler(event)" 
+		change="list1_changeHandler(event)">
+	
+	
+	<s:layout>
+		<s:VerticalLayout gap="0"
+						  horizontalAlign="justify"
+						  variableRowHeight="true" />
+	</s:layout>
+	
+	<fx:Script>
+		<![CDATA[			
+			import model.OrderModel;
+			
+			import mx.collections.ArrayCollection;
+			import mx.events.FlexEvent;
+			
+			import spark.events.IndexChangeEvent;
+				
+			protected function list1_creationCompleteHandler(event:FlexEvent):void
+			{
+			}
+			
+			protected function list1_changeHandler(event:IndexChangeEvent):void
+			{
+				//trace('list item changed');
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+</s:List>

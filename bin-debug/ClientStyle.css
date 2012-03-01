@@ -1,0 +1,183 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+
+@font-face { 
+	src: url("fonts/SPNTSB.TTF"); 
+	fontFamily: SapientSansBold; 
+	fontStyle:normal;
+	fontWeight: bold;
+	embedAsCFF: false; 
+}
+@font-face { 
+	src: url("fonts/SPNTSB.TTF"); 
+	fontFamily: SapientSansBold_CFF; 
+	fontStyle:normal;
+	fontWeight: bold;
+	embedAsCFF: true; 
+}
+
+
+@font-face { 
+	src: url("fonts/SPNTSK.TTF"); 
+	fontFamily: SapientSansBlack; 
+	fontStyle:normal;
+	fontWeight: bold;
+	embedAsCFF: false; 
+}
+@font-face { 
+	src: url("fonts/SPNTSK.TTF"); 
+	fontFamily: SapientSansBlack_CFF; 
+	fontStyle:normal;
+	fontWeight: bold;
+	embedAsCFF: true; 
+}
+
+@font-face { 
+	src: url("fonts/SPNTSR.TTF"); 
+	fontFamily: SapientSansRegular; 
+	fontStyle:normal;
+	embedAsCFF: false; 
+}
+@font-face { 
+	src: url("fonts/SPNTSR.TTF"); 
+	fontFamily: SapientSansRegular_CFF; 
+	fontStyle:normal;
+	embedAsCFF: true; 
+}
+@font-face { 
+	src: url("fonts/SPNTSRI.TTF"); 
+	fontFamily: SapientSansItalic_CFF; 
+	fontStyle:italic;
+	embedAsCFF: true; 
+}
+
+@font-face { 
+	src: url("fonts/ArialBlack.ttf"); 
+	fontFamily: ArialBlack_CFF;
+	embedAsCFF: true; 
+}
+
+
+
+s|Application
+{
+	backgroundColor: #363636;
+}
+
+s|Label.orderBoard
+{
+	fontFamily: SapientSansRegular_CFF;
+	fontSize: 60;
+	color: #c2c2c2;
+	trackingLeft: -2;
+	trackingRight: -2;
+}
+s|Label.orderCount
+{
+	fontFamily: SapientSansRegular_CFF;
+	fontSize: 24;
+	color: #ffffff;
+}
+
+s|List.vOrderListStyle
+{
+	horizontalScrollPolicy: off;
+	verticalScrollPolicy: auto;
+	contentBackgroundColor: #000000;
+}
+s|List.vOrderListStyle s|VScrollBar
+{
+	skinClass: ClassReference("spark.skins.mobile.supportClasses.MobileSkin");
+}
+s|ItemRenderer.orderListItemRenderer
+{
+	
+}
+s|Label.gridUserName
+{
+	fontFamily: SapientSansRegular_CFF;
+	fontSize: 24;
+	color: #ffffff;
+	textAlign: right;
+}
+s|Label.gridOrderTime
+{
+	fontFamily: SapientSansRegular_CFF;
+	fontSize: 24;
+	color: #b6b6b6;
+	textAlign: right;
+}
+s|Label.gridSandName
+{
+	fontFamily: SapientSansRegular_CFF;
+	fontSize: 24;
+	color: #ffffff;
+	textAlign: left;
+	lineBreak: toFit;
+}
+s|Label.gridSandOpts
+{
+	fontFamily: SapientSansItalic_CFF;
+	fontSize: 24;
+	fontStyle:italic;
+	color: #d2da21;
+	textAlign: left;
+}
+s|Label.gridChipsStatic
+{
+	fontFamily: SapientSansItalic_CFF;
+	fontSize: 24;
+	fontStyle:italic;
+	color: #FFFFFF;
+	textAlign: left;
+}
+s|Label.gridChipsName
+{
+	fontFamily: SapientSansItalic_CFF;
+	fontSize: 24;
+	fontStyle:italic;
+	color: #f55925;
+	textAlign: left;
+	lineBreak: toFit;
+}
+s|Label.gridDrinkStatic
+{
+	fontFamily: SapientSansItalic_CFF;
+	fontSize: 24;
+	fontStyle:italic;
+	color: #FFFFFF;
+	textAlign: left;
+}
+s|Label.gridDrinkName
+{
+	fontFamily: SapientSansItalic_CFF;
+	fontSize: 24;
+	fontStyle:italic;
+	color: #00aeef;
+	textAlign: left;
+	lineBreak: toFit;
+}
+s|Label.readyCopy
+{
+	fontFamily: ArialBlack_CFF;
+	fontSize: 20;
+	color: #FFFFFF;
+}
+s|SkinnableContainer.optionsModalContainer
+{
+	backgroundAlpha: .7;
+	backgroundColor: #000000;
+}
+s|BorderContainer.itemAddedModal
+{
+	cornerRadius: 5;
+	backgroundColor: #212121;
+	borderAlpha: 0;
+}
+s|Label.modalMessage
+{
+	fontFamily: SapientSansBold_CFF;
+	fontSize: 40;
+	fontWeight: bold;
+	color: #FFFFFF;
+}
