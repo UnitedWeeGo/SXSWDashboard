@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config instanceId="26" endpoint="http://local.orderservice.com" refreshRateInSeconds="10" />
+<config instanceId="26" endpoint="http://theideaserver.com/sxsw/public/" refreshRateInSeconds="10" />

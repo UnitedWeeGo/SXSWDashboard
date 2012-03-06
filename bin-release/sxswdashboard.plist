@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>assets</key>
+			<array>
+				<dict>
+					<key>kind</key>
+					<string>software-package</string>
+					<key>url</key>
+					<string>http://theideaserver.com/iosdemos/SXSWDashboard.ipa</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>full-size-image</string>
+					<key>needs-shine</key>
+					<false/>
+					<key>url</key>
+					<string>http://theideaserver.com/iosdemos/sxswdashboard.png</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>display-image</string>
+					<key>needs-shine</key>
+					<false/>
+					<key>url</key>
+					<string>http://theideaserver.com/iosdemos/sxswdashboard.png</string>
+				</dict>
+			</array>
+			<key>metadata</key>
+			<dict>
+				<key>bundle-identifier</key>
+				<string>com.sapientnitro.inhouse.sxswdashboard</string>
+				<key>bundle-version</key>
+				<string>1.0</string>
+				<key>kind</key>
+				<string>software</string>
+				<key>subtitle</key>
+				<string>SapientNitro</string>
+				<key>title</key>
+				<string>SXSWDashboard</string>
+			</dict>
+			<key>authorization</key>
+			<dict>
+				<key>grants</key>
+				<array>
+					<string>dfridm</string>
+					<string>smcine</string>
+					<string>cwalbu</string>
+				</array>
+			</dict>
+			<key>devices</key>
+			<dict>
+				<key>iPhone</key>
+				<false/>
+				<key>iPad</key>
+				<true/>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

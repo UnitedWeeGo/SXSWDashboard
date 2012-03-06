@@ -15,7 +15,7 @@
 
 	<!-- A universally unique application identifier. Must be unique across all AIR applications.
 	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
-	<id>com.sapient.SXSWDashboard.debug</id>
+	<id>com.sapientnitro.inhouse.sxswdashboard.debug</id>
 
 	<!-- Used as the filename for the application. Required. -->
 	<filename>SXSWDashboard</filename>
@@ -136,7 +136,10 @@
 		<image114x114></image114x114>
 		<image128x128></image128x128>
 	</icon> -->
-
+	<icon>
+		<image114x114>SXSW_ICON.png</image114x114>
+	</icon>
+	
 	<!-- Whether the application handles the update when a user double-clicks an update version
 	of the AIR file (true), or the default AIR application installer handles the update (false).
 	Optional. Default false. -->

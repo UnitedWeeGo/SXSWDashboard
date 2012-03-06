@@ -43,7 +43,6 @@ package service
 		
 		private function handleOrderCompleted(event:Event):void
 		{
-			trace('handleOrderCompleted');
 			var xml:XML = new XML(event.target.data);
 			
 			if (xml.@result == '200')
